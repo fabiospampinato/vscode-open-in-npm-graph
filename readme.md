@@ -24,4 +24,5 @@ It adds 1 command to the command palette:
 
 ## License
 
-MIT © Fabio Spampinato
+- Extension: MIT © Fabio Spampinato
+- Logo: MIT @ [npmgraph.js.org](https://github.com/npmgraph/npmgraph/blob/main/LICENSE)
