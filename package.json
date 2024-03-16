@@ -1,0 +1,57 @@
+{
+  "name": "vscode-open-in-npm-graph",
+  "displayName": "Open in NPM Graph",
+  "publisher": "fabiospampinato",
+  "repository": "github:fabiospampinato/vscode-open-in-npm-graph",
+  "description": "Open the current package, or arbitrary string, in npmgraph.js.org.",
+  "icon": "resources/logo-128x128.png",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "openInNPMGraph.open",
+        "title": "Open in NPM Graph"
+      }
+    ]
+  },
+  "scripts": {
+    "bundle:dev": "tsex bundle --external vscode --format cjs --platform node --no-declare",
+    "bundle:prod": "tsex bundle --external vscode --format cjs --platform node --minify",
+    "clean": "tsex clean",
+    "compile": "tsex compile",
+    "debug": "code --extensionDevelopmentPath $PWD --inspect-extensions 9222",
+    "package": "vsce package",
+    "prepublishOnly": "scex -bs clean bundle:prod",
+    "vscode:prepublish": "scex -bs clean bundle:prod",
+    "dev": "scex -bs bundle:dev debug",
+    "prod": "scex -bs bundle:prod debug"
+  },
+  "categories": [
+    "Other"
+  ],
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "keywords": [
+    "vscode",
+    "vsc",
+    "extension",
+    "open",
+    "in",
+    "npm",
+    "graph",
+    "npmgrpah"
+  ],
+  "dependencies": {
+    "vscode-extras": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.24",
+    "@types/vscode": "^1.87.0",
+    "esbuild": "0.20.2",
+    "scex": "^1.1.0",
+    "tsex": "^3.2.1",
+    "typescript": "^5.4.2"
+  }
+}
